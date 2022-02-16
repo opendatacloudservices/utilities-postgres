@@ -15,7 +15,7 @@ const tableExist = (client, tableName) => {
 };
 exports.tableExist = tableExist;
 const tablesExist = (client, tableNames) => {
-    return Promise.all(tableNames.map(() => exports.tableExist(client, 'Datasets'))).then(exists => {
+    return Promise.all(tableNames.map(tableName => (0, exports.tableExist)(client, tableName))).then(exists => {
         if (exists.includes(false)) {
             return Promise.resolve(false);
         }

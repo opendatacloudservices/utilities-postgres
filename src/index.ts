@@ -21,12 +21,12 @@ export const tablesExist = (
   client: Client,
   tableNames: string[]
 ): Promise<boolean> => {
-  return Promise.all(tableNames.map(() => tableExist(client, 'Datasets'))).then(
-    exists => {
-      if (exists.includes(false)) {
-        return Promise.resolve(false);
-      }
-      return Promise.resolve(true);
+  return Promise.all(
+    tableNames.map(tableName => tableExist(client, tableName))
+  ).then(exists => {
+    if (exists.includes(false)) {
+      return Promise.resolve(false);
     }
-  );
+    return Promise.resolve(true);
+  });
 };
