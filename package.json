@@ -1,5 +1,5 @@
 {
-  "name": "utilities-postgres",
+  "name": "@opendatacloudservices/utilities-postgres",
   "version": "1.0.0",
   "description": "Recurring helper functions for postgres",
   "main": "./build/index.js",
@@ -12,8 +12,17 @@
     "node": ">=17.5.0"
   },
   "files": [
-    "build/src"
+    "build"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendatacloudservices/utilities-postgres.git"
+  },
+  "author": "sebastian-meier",
+  "bugs": {
+    "url": "https://github.com/opendatacloudservices/utilities-postgres/issues"
+  },
+  "homepage": "https://github.com/opendatacloudservices/utilities-postgres#readme",
   "license": "Apache-2.0",
   "keywords": [],
   "scripts": {
@@ -25,17 +34,17 @@
     "fix": "gts fix src/**/*.ts src/*.ts",
     "exec": "tsc && node build/index"
   },
+  "dependencies": {
+    "pg": "^8.7.3"
+  },
   "devDependencies": {
-    "@types/node": "^17.0.18",
+    "@types/node": "^17.0.20",
     "@types/pg": "^8.6.4",
-    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
     "eslint": "^7.32.0",
     "gts": "^3.1.0",
     "jest": "^27.5.1",
     "ts-node": "^10.5.0",
     "typescript": "^4.4.4"
-  },
-  "dependencies": {
-    "pg": "^8.7.3"
   }
 }
